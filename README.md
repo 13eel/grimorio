@@ -1,6 +1,6 @@
-# Turborepo starter
+# Grimorio
 
-This is an official starter Turborepo.
+Progetto di localizzazione in italiano, non-ufficiale, di Blood on the Clocktower.
 
 ## Using this example
 
@@ -16,17 +16,14 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
+- `piazza`: CMS for localization resources.
 - `docs`: a [Next.js](https://nextjs.org/) app
 - `web`: another [Next.js](https://nextjs.org/) app
 - `@pkg/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@pkg/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@pkg/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
+### Tooling
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
