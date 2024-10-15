@@ -1,0 +1,15 @@
+{
+  "extends": "@tooling/tsconfig/internal-package.json",
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "ES2022"],
+    "jsx": "preserve",
+    "rootDir": ".",
+    "emitDeclarationOnly": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pkg/ui/*": ["./src/*"]
+    }
+  },
+  "include": ["*.ts", "src", "turbo"],
+  "exclude": ["node_modules"]
+}
