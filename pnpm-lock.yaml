@@ -209,6 +209,9 @@ importers:
       '@pkg/api':
         specifier: workspace:*
         version: link:../../packages/api
+      '@pkg/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
       '@pkg/db':
         specifier: workspace:*
         version: link:../../packages/db

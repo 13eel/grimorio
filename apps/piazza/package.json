@@ -16,6 +16,7 @@
   "dependencies": {
     "@libsql/client": "^0.14.0",
     "@pkg/api": "workspace:*",
+    "@pkg/auth": "workspace:*",
     "@pkg/db": "workspace:*",
     "@pkg/ui": "workspace:*",
     "@t3-oss/env-nextjs": "catalog:",
