@@ -158,6 +158,94 @@ importers:
         specifier: 'catalog:'
         version: 5.6.2
 
+  apps/piazza:
+    dependencies:
+      '@libsql/client':
+        specifier: ^0.14.0
+        version: 0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
+      '@pkg/api':
+        specifier: workspace:*
+        version: link:../../packages/api
+      '@pkg/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+      '@pkg/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      '@t3-oss/env-nextjs':
+        specifier: ^0.11.0
+        version: 0.11.1(typescript@5.6.2)(zod@3.23.8)
+      '@tanstack/react-query':
+        specifier: 'catalog:'
+        version: 5.56.2(react@18.3.1)
+      '@trpc/client':
+        specifier: 'catalog:'
+        version: 11.0.0-rc.502(@trpc/server@11.0.0-rc.502)
+      '@trpc/react-query':
+        specifier: 'catalog:'
+        version: 11.0.0-rc.502(@tanstack/react-query@5.56.2(react@18.3.1))(@trpc/client@11.0.0-rc.502(@trpc/server@11.0.0-rc.502))(@trpc/server@11.0.0-rc.502)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@trpc/server':
+        specifier: 'catalog:'
+        version: 11.0.0-rc.502
+      geist:
+        specifier: ^1.3.0
+        version: 1.3.1(next@14.2.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      next:
+        specifier: ^14.2.4
+        version: 14.2.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react:
+        specifier: catalog:react
+        version: 18.3.1
+      react-dom:
+        specifier: catalog:react
+        version: 18.3.1(react@18.3.1)
+      server-only:
+        specifier: ^0.0.1
+        version: 0.0.1
+      superjson:
+        specifier: ^2.2.1
+        version: 2.2.1
+      zod:
+        specifier: 'catalog:'
+        version: 3.23.8
+    devDependencies:
+      '@tooling/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint
+      '@tooling/prettier-config':
+        specifier: workspace:*
+        version: link:../../tooling/prettier
+      '@tooling/tailwind-config':
+        specifier: workspace:*
+        version: link:../../tooling/tailwind
+      '@tooling/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
+      '@types/node':
+        specifier: 'catalog:'
+        version: 22.5.5
+      '@types/react':
+        specifier: catalog:react
+        version: 18.3.6
+      '@types/react-dom':
+        specifier: catalog:react
+        version: 18.3.0
+      dotenv-cli:
+        specifier: ^7.4.2
+        version: 7.4.2
+      eslint:
+        specifier: 'catalog:'
+        version: 9.10.0(jiti@2.3.3)
+      jiti:
+        specifier: ^2.0.0
+        version: 2.3.3
+      prettier:
+        specifier: 'catalog:'
+        version: 3.3.3
+      typescript:
+        specifier: 'catalog:'
+        version: 5.6.2
+
   packages/api:
     dependencies:
       '@pkg/db':
@@ -201,11 +289,11 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(utf-8-validate@6.0.4)
       drizzle-orm:
-        specifier: ^0.33.0
-        version: 0.33.0(@libsql/client@0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@18.3.6)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(react@18.3.1)
+        specifier: ^0.35.1
+        version: 0.35.1(@libsql/client@0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@18.3.6)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(react@18.3.1)
       drizzle-zod:
         specifier: ^0.5.1
-        version: 0.5.1(drizzle-orm@0.33.0(@libsql/client@0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@18.3.6)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(react@18.3.1))(zod@3.23.8)
+        version: 0.5.1(drizzle-orm@0.35.1(@libsql/client@0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@18.3.6)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(react@18.3.1))(zod@3.23.8)
       zod:
         specifier: 'catalog:'
         version: 3.23.8
@@ -223,8 +311,8 @@ importers:
         specifier: ^7.4.2
         version: 7.4.2
       drizzle-kit:
-        specifier: ^0.25.0
-        version: 0.25.0
+        specifier: ^0.26.2
+        version: 0.26.2
       eslint:
         specifier: 'catalog:'
         version: 9.10.0(jiti@2.3.3)
@@ -342,7 +430,7 @@ importers:
         version: 7.36.1(eslint@9.10.0(jiti@2.3.3))
       eslint-plugin-react-hooks:
         specifier: rc
-        version: 5.1.0-rc-6cf85185-20241014(eslint@9.10.0(jiti@2.3.3))
+        version: 5.1.0-rc-83825814-20241015(eslint@9.10.0(jiti@2.3.3))
       eslint-plugin-turbo:
         specifier: ^2.1.1
         version: 2.1.3(eslint@9.10.0(jiti@2.3.3))
@@ -1953,17 +2041,17 @@ packages:
     resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
 
-  drizzle-kit@0.25.0:
-    resolution: {integrity: sha512-Rcf0nYCAKizwjWQCY+d3zytyuTbDb81NcaPor+8NebESlUz1+9W3uGl0+r9FhU4Qal5Zv9j/7neXCSCe7DHzjA==}
+  drizzle-kit@0.26.2:
+    resolution: {integrity: sha512-cMq8omEKywjIy5KcqUo6LvEFxkl8/zYHsgYjFVXjmPWWtuW4blcz+YW9+oIhoaALgs2ebRjzXwsJgN9i6P49Dw==}
     hasBin: true
 
-  drizzle-orm@0.33.0:
-    resolution: {integrity: sha512-SHy72R2Rdkz0LEq0PSG/IdvnT3nGiWuRk+2tXZQ90GVq/XQhpCzu/EFT3V2rox+w8MlkBQxifF8pCStNYnERfA==}
+  drizzle-orm@0.35.1:
+    resolution: {integrity: sha512-HQxDdYuXlZFuvDPztlUIzrX8TqWa/Ej6uN6L0hkbuGL4slexOUMc3u4nXVU15RQ5QYbk+uLQnR6v1+OIrdCTXQ==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=3'
       '@electric-sql/pglite': '>=0.1.1'
-      '@libsql/client': '*'
+      '@libsql/client': '>=0.10.0'
       '@neondatabase/serverless': '>=0.1'
       '@op-engineering/op-sqlite': '>=2'
       '@opentelemetry/api': ^1.4.1
@@ -2170,8 +2258,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-react-hooks@5.1.0-rc-6cf85185-20241014:
-    resolution: {integrity: sha512-BeEXOFhXkde3ltdeI6TaiNm/2Fq7wevwjf6c+nPG57QewYiVRD5W910pEnsJikneK1QWrX5OgZS1vpCpUxzfYw==}
+  eslint-plugin-react-hooks@5.1.0-rc-83825814-20241015:
+    resolution: {integrity: sha512-lOSSyz+7A2yG93dFXY09QwCDFaCf4/oniscyMcS22DHT+BBrCH7SNKJt2bD6pG1ovnPYzGWYcXYM2GVV8eIckg==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
@@ -5348,7 +5436,7 @@ snapshots:
 
   dotenv@16.4.5: {}
 
-  drizzle-kit@0.25.0:
+  drizzle-kit@0.26.2:
     dependencies:
       '@drizzle-team/brocli': 0.10.1
       '@esbuild-kit/esm-loader': 2.6.5
@@ -5357,7 +5445,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.33.0(@libsql/client@0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@18.3.6)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(react@18.3.1):
+  drizzle-orm@0.35.1(@libsql/client@0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@18.3.6)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(react@18.3.1):
     optionalDependencies:
       '@libsql/client': 0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       '@neondatabase/serverless': 0.9.5
@@ -5366,9 +5454,9 @@ snapshots:
       '@vercel/postgres': 0.10.0(utf-8-validate@6.0.4)
       react: 18.3.1
 
-  drizzle-zod@0.5.1(drizzle-orm@0.33.0(@libsql/client@0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@18.3.6)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(react@18.3.1))(zod@3.23.8):
+  drizzle-zod@0.5.1(drizzle-orm@0.35.1(@libsql/client@0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@18.3.6)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(react@18.3.1))(zod@3.23.8):
     dependencies:
-      drizzle-orm: 0.33.0(@libsql/client@0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@18.3.6)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(react@18.3.1)
+      drizzle-orm: 0.35.1(@libsql/client@0.14.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@18.3.6)(@vercel/postgres@0.10.0(utf-8-validate@6.0.4))(react@18.3.1)
       zod: 3.23.8
 
   eastasianwidth@0.2.0: {}
@@ -5621,7 +5709,7 @@ snapshots:
       safe-regex-test: 1.0.3
       string.prototype.includes: 2.0.0
 
-  eslint-plugin-react-hooks@5.1.0-rc-6cf85185-20241014(eslint@9.10.0(jiti@2.3.3)):
+  eslint-plugin-react-hooks@5.1.0-rc-83825814-20241015(eslint@9.10.0(jiti@2.3.3)):
     dependencies:
       eslint: 9.10.0(jiti@2.3.3)
 
