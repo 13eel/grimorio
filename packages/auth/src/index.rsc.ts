@@ -1,9 +1,10 @@
 import { cache } from "react";
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthResult } from "next-auth";
 
 import { authConfig } from "./config";
+import { Auth } from "./types";
 
-export type { Session } from "next-auth";
+export type { Session, NextAuthResult } from "next-auth";
 
 const { handlers, auth: defaultAuth, signIn, signOut } = NextAuth(authConfig);
 
@@ -11,7 +12,7 @@ const { handlers, auth: defaultAuth, signIn, signOut } = NextAuth(authConfig);
  * This is the main way to get session data for your RSCs.
  * This will de-duplicate all calls to next-auth's default `auth()` function and only call it once per request
  */
-const auth = cache(defaultAuth);
+const auth: Auth = cache(defaultAuth);
 
 export { handlers, auth, signIn, signOut };
 

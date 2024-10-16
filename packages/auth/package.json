@@ -36,5 +36,5 @@
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@tooling/prettier-config"
 }

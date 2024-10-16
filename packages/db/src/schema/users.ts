@@ -11,12 +11,13 @@ import {
 
 export const Users = pgTable("users", {
   id: uuid().notNull().primaryKey().defaultRandom(),
-  username: varchar({ length: 255 }),
+  name: varchar({ length: 255 }),
   email: varchar({ length: 255 }).notNull(),
   emailVerified: timestamp({
     mode: "date",
     withTimezone: true,
   }),
+  image: varchar({ length: 255 }),
 });
 
 export const UserRelations = relations(Users, ({ many }) => ({
@@ -34,13 +35,13 @@ export const Accounts = pgTable(
     type: varchar("type", { length: 255 }).$type<AccountType>().notNull(),
     provider: varchar({ length: 255 }).notNull(),
     providerAccountId: varchar({ length: 255 }).notNull(),
-    refreshToken: varchar({ length: 255 }),
-    accessToken: text(),
-    expiresAt: integer(),
-    tokenType: varchar({ length: 255 }),
+    refresh_token: varchar({ length: 255 }),
+    access_token: text(),
+    expires_at: integer(),
+    token_type: varchar({ length: 255 }),
     scope: varchar({ length: 255 }),
-    idToken: text(),
-    sessionState: varchar({ length: 255 }),
+    id_token: text(),
+    session_state: varchar({ length: 255 }),
   },
   (account) => ({
     compoundKey: primaryKey({
