@@ -8,7 +8,7 @@ import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import Discord from "next-auth/providers/discord";
 
 import { db } from "@pkg/db/client";
-import { Accounts, Sessions, Users } from "@pkg/db/schema/users"
+import { Accounts, Sessions, Users } from "@pkg/db/schema";
 
 import { env } from "../env";
 
