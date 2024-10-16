@@ -19,6 +19,7 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
+    "@pkg/auth": "workspace:*",
     "@pkg/db": "workspace:*",
     "@trpc/server": "catalog:",
     "superjson": "catalog:",

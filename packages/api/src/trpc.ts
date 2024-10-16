@@ -6,13 +6,12 @@
  * tl;dr - this is where all the tRPC server stuff is created and plugged in.
  * The pieces you will need to use are documented accordingly near the end
  */
-
-// import type { Session } from "@acme/auth";
-// import { auth, validateToken } from "@acme/auth";
-import { initTRPC } from "@trpc/server";
+import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
+import type { Session } from "@pkg/auth";
+import { auth, validateToken } from "@pkg/auth";
 import { db } from "@pkg/db/client";
 
 /**
@@ -20,11 +19,11 @@ import { db } from "@pkg/db/client";
  * - Expo requests will have a session token in the Authorization header
  * - Next.js requests will have a session token in cookies
  */
-// const isomorphicGetSession = async (headers: Headers) => {
-//   const authToken = headers.get("Authorization") ?? null;
-// if (authToken) return validateToken(authToken);
-// return auth();
-// };
+const isomorphicGetSession = async (headers: Headers) => {
+  const authToken = headers.get("Authorization") ?? null;
+  if (authToken) return validateToken(authToken);
+  return auth();
+};
 
 /**
  * 1. CONTEXT
@@ -38,21 +37,20 @@ import { db } from "@pkg/db/client";
  *
  * @see https://trpc.io/docs/server/context
  */
-export const createTRPCContext = (opts: {
+export const createTRPCContext = async (opts: {
   headers: Headers;
-  // session: Session | null;
+  session: Session | null;
 }) => {
-  // const authToken = opts.headers.get("Authorization") ?? null;
-  // const session = await isomorphicGetSession(opts.headers);
+  const authToken = opts.headers.get("Authorization") ?? null;
+  const session = await isomorphicGetSession(opts.headers);
 
   const source = opts.headers.get("x-trpc-source") ?? "unknown";
-  // console.log(">>> tRPC Request from", source, "by", session?.user);
-  console.log(">>> tRPC Request from", source);
+  console.log(">>> tRPC Request from", source, "by", session?.user);
 
   return {
-    // session,
+    session,
     db,
-    // token: authToken,
+    token: authToken,
   };
 };
 
@@ -132,15 +130,16 @@ export const publicProcedure = t.procedure.use(timingMiddleware);
  *
  * @see https://trpc.io/docs/procedures
  */
-export const protectedProcedure = t.procedure.use(timingMiddleware);
-// .use(({ next }) => {
-// if (!ctx.session?.user) {
-//   throw new TRPCError({ code: "UNAUTHORIZED" });
-// }
-// return next({
-// ctx: {
-// infers the `session` as non-nullable
-// session: { ...ctx.session, user: ctx.session.user },
-// },
-// });
-// });
+export const protectedProcedure = t.procedure
+  .use(timingMiddleware)
+  .use(({ ctx, next }) => {
+    if (!ctx.session?.user) {
+      throw new TRPCError({ code: "UNAUTHORIZED" });
+    }
+    return next({
+      ctx: {
+        // infers the `session` as non-nullable
+        session: { ...ctx.session, user: ctx.session.user },
+      },
+    });
+  });
