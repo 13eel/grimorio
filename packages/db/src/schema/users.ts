@@ -13,7 +13,7 @@ export const Users = pgTable("users", {
   id: uuid().notNull().primaryKey().defaultRandom(),
   name: varchar({ length: 255 }),
   email: varchar({ length: 255 }).notNull(),
-  emailVerified: timestamp({
+  emailVerified: timestamp("emailVerified", {
     mode: "date",
     withTimezone: true,
   }),
@@ -34,7 +34,7 @@ export const Accounts = pgTable(
       .references(() => Users.id, { onDelete: "cascade" }),
     type: varchar("type", { length: 255 }).$type<AccountType>().notNull(),
     provider: varchar({ length: 255 }).notNull(),
-    providerAccountId: varchar({ length: 255 }).notNull(),
+    providerAccountId: varchar("providerAccountId", { length: 255 }).notNull(),
     refresh_token: varchar({ length: 255 }),
     access_token: text(),
     expires_at: integer(),
@@ -55,8 +55,8 @@ export const AccountRelations = relations(Accounts, ({ one }) => ({
 }));
 
 export const Sessions = pgTable("sessions", {
-  sessionToken: varchar({ length: 255 }).notNull().primaryKey(),
-  userId: uuid()
+  sessionToken: varchar("sessionToken", { length: 255 }).notNull().primaryKey(),
+  userId: uuid("userId")
     .notNull()
     .references(() => Users.id, { onDelete: "cascade" }),
   expires: timestamp({ mode: "date", withTimezone: true }).notNull(),

@@ -39,6 +39,7 @@ export const authConfig = {
     : {}),
   secret: env.AUTH_SECRET,
   providers: [Discord],
+  debug: true,
   callbacks: {
     session: (opts) => {
       if (!("user" in opts))
