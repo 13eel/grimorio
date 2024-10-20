@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 
+import type { Auth } from "./types";
 import { authConfig } from "./config";
-import { Auth } from "./types";
 
 export type { Session } from "next-auth";
 

@@ -12,11 +12,14 @@ import { Accounts, Sessions, Users } from "@pkg/db/schema";
 
 import { env } from "../env";
 
+export type SessionUser = DefaultSession["user"] & {
+  id: string;
+};
+
 declare module "next-auth" {
+  type SessionUser = DefaultSession["user"] & { id: string };
   interface Session {
-    user: {
-      id: string;
-    } & DefaultSession["user"];
+    user: SessionUser;
   }
 }
 
@@ -39,7 +42,6 @@ export const authConfig = {
     : {}),
   secret: env.AUTH_SECRET,
   providers: [Discord],
-  debug: true,
   callbacks: {
     session: (opts) => {
       if (!("user" in opts))

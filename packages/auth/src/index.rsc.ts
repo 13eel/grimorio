@@ -1,8 +1,8 @@
 import { cache } from "react";
-import NextAuth, { NextAuthResult } from "next-auth";
+import NextAuth from "next-auth";
 
+import type { Auth } from "./types";
 import { authConfig } from "./config";
-import { Auth } from "./types";
 
 export type { Session, NextAuthResult } from "next-auth";
 
