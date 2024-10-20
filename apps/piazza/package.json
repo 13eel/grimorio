@@ -19,6 +19,7 @@
     "@pkg/auth": "workspace:*",
     "@pkg/db": "workspace:*",
     "@pkg/ui": "workspace:*",
+    "@react-pdf/renderer": "^4.0.0",
     "@t3-oss/env-nextjs": "catalog:",
     "@tanstack/react-query": "catalog:",
     "@trpc/client": "catalog:",
