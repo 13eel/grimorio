@@ -1,0 +1,9 @@
+{
+  "extends": "@tooling/tsconfig/internal-package.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext"]
+  },
+  "include": ["config.ts", "src"],
+  "exclude": ["node_modules"]
+}

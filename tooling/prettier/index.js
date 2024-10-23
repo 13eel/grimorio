@@ -29,7 +29,12 @@ const config = {
     "^[../]",
     "^[./]",
   ],
-  importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
+  importOrderParserPlugins: [
+    "typescript",
+    "jsx",
+    "decorators-legacy",
+    "importAssertions",
+  ],
   importOrderTypeScriptVersion: "5.5.3",
   // TODO: Remove? as no handlebars files are present
   overrides: [
