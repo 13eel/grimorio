@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "git clean -xdf .cache .next .turbo node_modules",
     "build": "pnpm with-env next build",
-    "dev": "pnpm with-env next dev",
+    "dev": "pnpm with-env next dev --turbopack",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
     "start": "pnpm with-env next start",
