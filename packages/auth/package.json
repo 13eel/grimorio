@@ -18,12 +18,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@auth/core": "0.34.2",
+    "@auth/core": "0.37.2",
     "@auth/drizzle-adapter": "1.4.2",
     "@pkg/db": "workspace:*",
     "@t3-oss/env-nextjs": "catalog:",
     "next": "catalog:",
-    "next-auth": "5.0.0-beta.20",
+    "next-auth": "5.0.0-beta.25",
     "react": "catalog:react",
     "react-dom": "catalog:react",
     "zod": "catalog:"
