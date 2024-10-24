@@ -28,5 +28,14 @@
     "turbo": "^2.1.2",
     "typescript": "catalog:"
   },
-  "prettier": "@tooling/prettier-config"
+  "prettier": "@tooling/prettier-config",
+  "pnpm": {
+    "overrides": {
+      "@types/react": "catalog:react",
+      "@types/react-dom": "catalog:react"
+    },
+    "patchedDependencies": {
+      "jotai@2.10.1": "patches/jotai@2.10.1.patch"
+    }
+  }
 }
