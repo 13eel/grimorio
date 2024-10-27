@@ -5,13 +5,13 @@ packages:
 
 catalog:
   "@t3-oss/env-nextjs": ^0.11.1
-  "@tanstack/react-query": ^5.51.23
-  "@trpc/client": ^11.0.0-rc.477
-  "@trpc/react-query": ^11.0.0-rc.477
-  "@trpc/server": ^11.0.0-rc.477
-  "@types/node": ^22.5.5
+  "@tanstack/react-query": ^5.59.16
+  "@trpc/client": ^11.0.0-rc.593
+  "@trpc/react-query": ^11.0.0-rc.593
+  "@trpc/server": ^11.0.0-rc.593
+  "@types/node": ^22.7.8
   eslint: ^9.9.0
-  next: ^14.2.14
+  next: ^15.0.1
   prettier: ^3.3.3
   superjson: ^2.2.1
   typescript: ^5.5.4
@@ -20,7 +20,7 @@ catalog:
 
 catalogs:
   react:
-    "@types/react": ^18.2.6
-    "@types/react-dom": ^18.3.0
-    react: ^18.3.1
-    react-dom: ^18.3.1
+    "@types/react": npm:types-react@rc
+    "@types/react-dom": npm:types-react@rc
+    react: rc
+    react-dom: rc

@@ -1,37 +1,28 @@
 {
-  "name": "@pkg/auth",
+  "name": "@pkg/sync",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "exports": {
-    ".": {
-      "react-server": "./src/index.rsc.ts",
-      "default": "./src/index.ts"
-    },
-    "./env": "./env.ts"
-  },
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "tsc",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "with-env": "dotenv -e ../../.env --",
+    "pull-images": "tsx ./src/scripts/pull-images",
+    "sync": ""
   },
   "dependencies": {
-    "@auth/core": "0.37.2",
-    "@auth/drizzle-adapter": "1.7.2",
-    "@pkg/db": "workspace:*",
-    "@t3-oss/env-nextjs": "catalog:",
-    "next": "catalog:",
-    "next-auth": "5.0.0-beta.25",
-    "react": "catalog:react",
-    "react-dom": "catalog:react",
     "zod": "catalog:"
   },
   "devDependencies": {
     "@tooling/eslint-config": "workspace:*",
     "@tooling/prettier-config": "workspace:*",
     "@tooling/tsconfig": "workspace:*",
+    "dotenv-cli": "^7.4.2",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"

@@ -10,14 +10,14 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@auth/core": "0.34.2"
+    "@auth/core": "0.37.2"
   },
   "devDependencies": {
     "@tooling/eslint-config": "workspace:*",
     "@tooling/prettier-config": "workspace:*",
     "@tooling/tailwind-config": "workspace:*",
     "@tooling/tsconfig": "workspace:*",
-    "@types/node": "^20.16.10",
+    "@types/node": "catalog:",
     "eslint": "catalog:",
     "h3": "^1.13.0",
     "nitropack": "^2.9.7",
