@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@auth/core": "0.37.2",
-    "@auth/drizzle-adapter": "1.4.2",
+    "@auth/drizzle-adapter": "1.7.2",
     "@pkg/db": "workspace:*",
     "@t3-oss/env-nextjs": "catalog:",
     "next": "catalog:",
